@@ -63,13 +63,10 @@ namespace ThirdLab
 
             MyVector vectorA = new MyVector(coordinatesA);
             MyVector vectorB = new MyVector(coordinatesB);
-            MyVector tempVect;
 
-            tempVect = vectorA + vectorB;
-            SummResult.Text = $"->a+b({tempVect})";
+            SummResult.Text = $"->a+b({vectorA + vectorB})";
 
-            tempVect = vectorA - vectorB;
-            DiffResult.Text = $"->a-b({tempVect})";
+            DiffResult.Text = $"->a-b({vectorA - vectorB})";
 
             DotResult.Text = $"{vectorA*vectorB}";
 
