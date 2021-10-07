@@ -43,6 +43,19 @@ namespace ThirdLab
                    ;
         }
 
+        public String CrossProductWith(MyVector vec)
+        {
+            double iResult = (this._coordinates.y * vec._coordinates.z) - (this._coordinates.z * vec._coordinates.y);
+            double jResult = (this._coordinates.x * vec._coordinates.z) - (this._coordinates.z * vec._coordinates.x);
+            double kResult = (this._coordinates.x * vec._coordinates.y) - (this._coordinates.y * vec._coordinates.x);
+
+            return $"{iResult}i - {jResult}j + {kResult}k";
+        }
+
+        public override string ToString() { 
+            return $"{_coordinates.x}, {_coordinates.y}, {_coordinates.z}"; 
+        }
+
         public double Length()
         {
             return Math.Sqrt(
