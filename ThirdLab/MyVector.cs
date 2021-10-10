@@ -43,6 +43,11 @@ namespace ThirdLab
                    ;
         }
 
+        public Coordinates GetCoordinates()
+        {
+            return _coordinates;
+        }
+
         public String CrossProductWith(MyVector vec)
         {
             double iResult = (this._coordinates.y * vec._coordinates.z) - (this._coordinates.z * vec._coordinates.y);

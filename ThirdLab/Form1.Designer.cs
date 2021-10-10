@@ -44,6 +44,15 @@
             this.CrossResult = new System.Windows.Forms.Label();
             this.DiffResult = new System.Windows.Forms.Label();
             this.SummResult = new System.Windows.Forms.Label();
+            this.Vec1Len = new System.Windows.Forms.Label();
+            this.Vec2Len = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Vec1Img = new System.Windows.Forms.PictureBox();
+            this.Vec2Img = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Vec1Img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Vec2Img)).BeginInit();
             this.SuspendLayout();
             // 
             // Vec1Label
@@ -115,7 +124,7 @@
             // Summ
             // 
             this.Summ.AutoSize = true;
-            this.Summ.Location = new System.Drawing.Point(12, 103);
+            this.Summ.Location = new System.Drawing.Point(15, 194);
             this.Summ.Name = "Summ";
             this.Summ.Size = new System.Drawing.Size(44, 13);
             this.Summ.TabIndex = 9;
@@ -124,7 +133,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 128);
+            this.label1.Location = new System.Drawing.Point(15, 220);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 10;
@@ -133,7 +142,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 154);
+            this.label2.Location = new System.Drawing.Point(305, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 13);
             this.label2.TabIndex = 11;
@@ -142,7 +151,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 179);
+            this.label3.Location = new System.Drawing.Point(305, 220);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 13);
             this.label3.TabIndex = 12;
@@ -151,7 +160,7 @@
             // DotResult
             // 
             this.DotResult.AutoSize = true;
-            this.DotResult.Location = new System.Drawing.Point(159, 153);
+            this.DotResult.Location = new System.Drawing.Point(452, 194);
             this.DotResult.Name = "DotResult";
             this.DotResult.Size = new System.Drawing.Size(0, 13);
             this.DotResult.TabIndex = 13;
@@ -159,7 +168,7 @@
             // CrossResult
             // 
             this.CrossResult.AutoSize = true;
-            this.CrossResult.Location = new System.Drawing.Point(162, 178);
+            this.CrossResult.Location = new System.Drawing.Point(455, 219);
             this.CrossResult.Name = "CrossResult";
             this.CrossResult.Size = new System.Drawing.Size(0, 13);
             this.CrossResult.TabIndex = 14;
@@ -167,7 +176,7 @@
             // DiffResult
             // 
             this.DiffResult.AutoSize = true;
-            this.DiffResult.Location = new System.Drawing.Point(80, 128);
+            this.DiffResult.Location = new System.Drawing.Point(79, 219);
             this.DiffResult.Name = "DiffResult";
             this.DiffResult.Size = new System.Drawing.Size(0, 13);
             this.DiffResult.TabIndex = 15;
@@ -175,16 +184,83 @@
             // SummResult
             // 
             this.SummResult.AutoSize = true;
-            this.SummResult.Location = new System.Drawing.Point(63, 103);
+            this.SummResult.Location = new System.Drawing.Point(65, 194);
             this.SummResult.Name = "SummResult";
             this.SummResult.Size = new System.Drawing.Size(0, 13);
             this.SummResult.TabIndex = 16;
+            // 
+            // Vec1Len
+            // 
+            this.Vec1Len.AutoSize = true;
+            this.Vec1Len.Location = new System.Drawing.Point(196, 9);
+            this.Vec1Len.Name = "Vec1Len";
+            this.Vec1Len.Size = new System.Drawing.Size(0, 13);
+            this.Vec1Len.TabIndex = 17;
+            // 
+            // Vec2Len
+            // 
+            this.Vec2Len.AutoSize = true;
+            this.Vec2Len.Location = new System.Drawing.Point(528, 9);
+            this.Vec2Len.Name = "Vec2Len";
+            this.Vec2Len.Size = new System.Drawing.Size(0, 13);
+            this.Vec2Len.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(141, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Длинна:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(479, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Длинна:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(233, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 38);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Случайные вектора";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Vec1Img
+            // 
+            this.Vec1Img.Location = new System.Drawing.Point(15, 71);
+            this.Vec1Img.Name = "Vec1Img";
+            this.Vec1Img.Size = new System.Drawing.Size(175, 120);
+            this.Vec1Img.TabIndex = 22;
+            this.Vec1Img.TabStop = false;
+            // 
+            // Vec2Img
+            // 
+            this.Vec2Img.Location = new System.Drawing.Point(353, 72);
+            this.Vec2Img.Name = "Vec2Img";
+            this.Vec2Img.Size = new System.Drawing.Size(175, 120);
+            this.Vec2Img.TabIndex = 23;
+            this.Vec2Img.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 213);
+            this.ClientSize = new System.Drawing.Size(585, 283);
+            this.Controls.Add(this.Vec2Img);
+            this.Controls.Add(this.Vec1Img);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Vec2Len);
+            this.Controls.Add(this.Vec1Len);
             this.Controls.Add(this.SummResult);
             this.Controls.Add(this.DiffResult);
             this.Controls.Add(this.CrossResult);
@@ -203,6 +279,8 @@
             this.Controls.Add(this.Vec1Label);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.Vec1Img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Vec2Img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,6 +303,13 @@
         private System.Windows.Forms.Label CrossResult;
         private System.Windows.Forms.Label DiffResult;
         private System.Windows.Forms.Label SummResult;
+        private System.Windows.Forms.Label Vec1Len;
+        private System.Windows.Forms.Label Vec2Len;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox Vec1Img;
+        private System.Windows.Forms.PictureBox Vec2Img;
     }
 }
 
