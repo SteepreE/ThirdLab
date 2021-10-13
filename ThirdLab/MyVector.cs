@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ThirdLab
 {
-    class MyVector
+    public class MyVector
     {
         private Coordinates _coordinates;
 
@@ -43,22 +43,41 @@ namespace ThirdLab
                    ;
         }
 
+        public static bool operator ==(MyVector vec1, MyVector vec2)
+        {
+            return vec1._coordinates == vec2._coordinates;
+        }
+
+        public static bool operator !=(MyVector vec1, MyVector vec2)
+        {
+            return vec1._coordinates != vec2._coordinates;
+        }
+
         public Coordinates GetCoordinates()
         {
             return _coordinates;
         }
 
-        public String CrossProductWith(MyVector vec)
+        public MyVector CrossProductWith(MyVector vec)
         {
             double iResult = (this._coordinates.y * vec._coordinates.z) - (this._coordinates.z * vec._coordinates.y);
-            double jResult = (this._coordinates.x * vec._coordinates.z) - (this._coordinates.z * vec._coordinates.x);
+            double jResult = -1*((this._coordinates.x * vec._coordinates.z) - (this._coordinates.z * vec._coordinates.x));
             double kResult = (this._coordinates.x * vec._coordinates.y) - (this._coordinates.y * vec._coordinates.x);
 
-            return $"{iResult}i - {jResult}j + {kResult}k";
+            return new MyVector(iResult, jResult, kResult);
         }
 
         public override string ToString() { 
             return $"{_coordinates.x}, {_coordinates.y}, {_coordinates.z}"; 
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is MyVector)) return false;
+
+            var vector = obj as MyVector;
+
+            return this == vector;
         }
 
         public double Length()

@@ -51,13 +51,11 @@ namespace ThirdLab
             DiffResult.Text = $"->a-b({vectorA - vectorB})";
 
             DotResult.Text = $"{vectorA * vectorB}";
-            CrossResult.Text = vectorA.CrossProductWith(vectorB);
+            CrossResult.Text = $"axb({vectorA.CrossProductWith(vectorB)})";
         }
 
-        private void DrawVector(MyVector vector, object sender)
-        { 
-            var pictBox = sender as PictureBox;
-
+        private void DrawVector(MyVector vector, PictureBox pictBox)
+        {
             Graphics g = pictBox.CreateGraphics();
             Pen pen = new Pen(Color.Red, 2);
             g.Clear(pictBox.BackColor);
@@ -69,7 +67,7 @@ namespace ThirdLab
                                          pictBox.Height / 2);
 
             Point endPoint = new Point(pictBox.Width / 2 + (int)vector.GetCoordinates().x * scale,
-                                       pictBox.Height / 2 + (int)vector.GetCoordinates().y * scale);
+                                       pictBox.Height / 2 - (int)vector.GetCoordinates().y * scale);
             
             g.DrawLine(pen, startPoint, endPoint);
         }
@@ -150,7 +148,7 @@ namespace ThirdLab
                 {
                     var textBox = el as TextBox;
 
-                    textBox.Text = $"{r.Next(20) - 10}";
+                    textBox.Text = $"{r.Next(21) - 10}";
                 }
             }
         }

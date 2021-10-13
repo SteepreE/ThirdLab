@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ThirdLab
 {
-    class Coordinates
+    public class Coordinates
     {
         public double x;
         public double y;
@@ -44,6 +44,29 @@ namespace ThirdLab
                 coordinates1.y - coordinates2.y,
                 coordinates1.z - coordinates2.z
                 );
+        }
+
+        public static bool operator ==(Coordinates coordinates1, Coordinates coordinates2)
+        {
+            return (coordinates1.x == coordinates2.x &&
+                coordinates1.y == coordinates2.y &&
+                coordinates1.z == coordinates2.z);
+        }
+
+        public static bool operator !=(Coordinates coordinates1, Coordinates coordinates2)
+        {
+            return !(coordinates1.x == coordinates2.x &&
+                coordinates1.y == coordinates2.y &&
+                coordinates1.z == coordinates2.z);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Coordinates)) return false;
+
+            var coordinates = obj as Coordinates;
+
+            return this == coordinates;
         }
     }
 }
