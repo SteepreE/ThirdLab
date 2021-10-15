@@ -79,7 +79,7 @@
             this.Vec1XInput.Name = "Vec1XInput";
             this.Vec1XInput.Size = new System.Drawing.Size(44, 20);
             this.Vec1XInput.TabIndex = 3;
-            this.Vec1XInput.TextChanged += new System.EventHandler(this.CalculateHandler);
+            this.Vec1XInput.TextChanged += new System.EventHandler(this.ChangesHandler);
             // 
             // Vec1YInput
             // 
@@ -87,7 +87,7 @@
             this.Vec1YInput.Name = "Vec1YInput";
             this.Vec1YInput.Size = new System.Drawing.Size(47, 20);
             this.Vec1YInput.TabIndex = 4;
-            this.Vec1YInput.TextChanged += new System.EventHandler(this.CalculateHandler);
+            this.Vec1YInput.TextChanged += new System.EventHandler(this.ChangesHandler);
             // 
             // Vec1ZInput
             // 
@@ -95,7 +95,7 @@
             this.Vec1ZInput.Name = "Vec1ZInput";
             this.Vec1ZInput.Size = new System.Drawing.Size(44, 20);
             this.Vec1ZInput.TabIndex = 5;
-            this.Vec1ZInput.TextChanged += new System.EventHandler(this.CalculateHandler);
+            this.Vec1ZInput.TextChanged += new System.EventHandler(this.ChangesHandler);
             // 
             // Vec2ZInput
             // 
@@ -103,7 +103,7 @@
             this.Vec2ZInput.Name = "Vec2ZInput";
             this.Vec2ZInput.Size = new System.Drawing.Size(44, 20);
             this.Vec2ZInput.TabIndex = 8;
-            this.Vec2ZInput.TextChanged += new System.EventHandler(this.CalculateHandler);
+            this.Vec2ZInput.TextChanged += new System.EventHandler(this.ChangesHandler);
             // 
             // Vec2YInput
             // 
@@ -111,7 +111,7 @@
             this.Vec2YInput.Name = "Vec2YInput";
             this.Vec2YInput.Size = new System.Drawing.Size(47, 20);
             this.Vec2YInput.TabIndex = 7;
-            this.Vec2YInput.TextChanged += new System.EventHandler(this.CalculateHandler);
+            this.Vec2YInput.TextChanged += new System.EventHandler(this.ChangesHandler);
             // 
             // Vec2XInput
             // 
@@ -119,7 +119,7 @@
             this.Vec2XInput.Name = "Vec2XInput";
             this.Vec2XInput.Size = new System.Drawing.Size(44, 20);
             this.Vec2XInput.TabIndex = 6;
-            this.Vec2XInput.TextChanged += new System.EventHandler(this.CalculateHandler);
+            this.Vec2XInput.TextChanged += new System.EventHandler(this.ChangesHandler);
             // 
             // Summ
             // 
@@ -231,7 +231,7 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "Случайные вектора";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.CreateRandomVectors);
             // 
             // Vec1Img
             // 

@@ -12,20 +12,27 @@ namespace ThirdLab
 {
     public partial class Form1 : Form
     {
+        private MyVector _vectorA;
+        private MyVector _vectorB;
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        public void CalculateHandler(object sender, EventArgs e)
+        public void ChangesHandler(object sender, EventArgs e)
         {
-            if (IsValidFields())
-            {
-                Calculate();
-            }
+            if (!IsValidFields()) return;
+
+            InitVectors();
+
+            DrawVector(_vectorA, Vec1Img);
+            DrawVector(_vectorB, Vec2Img);
+
+            Calculate();
         }
 
-        public void Calculate()
+        private void InitVectors()
         {
             var coordinatesA = new Coordinates(
                 double.Parse(Vec1XInput.Text),
@@ -38,20 +45,21 @@ namespace ThirdLab
                 double.Parse(Vec2ZInput.Text)
                 );
 
-            MyVector vectorA = new MyVector(coordinatesA);
-            MyVector vectorB = new MyVector(coordinatesB);
+            _vectorA = new MyVector(coordinatesA);
+            _vectorB = new MyVector(coordinatesB);
+        }
 
-            DrawVector(vectorA, Vec1Img);
-            DrawVector(vectorB, Vec2Img);
 
-            Vec1Len.Text = $"{Math.Round(vectorA.Length(), 2)}";
-            Vec2Len.Text = $"{Math.Round(vectorB.Length(), 2)}";
+        private void Calculate()
+        {
+            Vec1Len.Text = $"{Math.Round(_vectorA.Length(), 2)}";
+            Vec2Len.Text = $"{Math.Round(_vectorB.Length(), 2)}";
 
-            SummResult.Text = $"->a+b({vectorA + vectorB})";
-            DiffResult.Text = $"->a-b({vectorA - vectorB})";
+            SummResult.Text = $"->a+b({_vectorA + _vectorB})";
+            DiffResult.Text = $"->a-b({_vectorA - _vectorB})";
 
-            DotResult.Text = $"{vectorA * vectorB}";
-            CrossResult.Text = $"axb({vectorA.CrossProductWith(vectorB)})";
+            DotResult.Text = $"{_vectorA * _vectorB}";
+            CrossResult.Text = $"axb({_vectorA.CrossProductWith(_vectorB)})";
         }
 
         private void DrawVector(MyVector vector, PictureBox pictBox)
@@ -138,7 +146,7 @@ namespace ThirdLab
             Vec2Len.Text = "";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CreateRandomVectors(object sender, EventArgs e)
         {
             Random r = new Random();
 
